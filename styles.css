@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 
 *{
     margin: 0;
@@ -169,7 +169,7 @@ span{
 }
 
 .home-content p{
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 
@@ -292,10 +292,13 @@ span{
         font-size: 5rem;
     }
     .home-img img{
-        width: 70vw;
-        margin-top: 4rem;
+    position: relative;
+    width: 20vw; /* Ajusta el tamaño aquí */
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+}
 
-    }
 }
 
 /* services section */
@@ -372,6 +375,7 @@ span{
     }
 }
 
+
 /* skills section */
 
 .skills{
@@ -383,7 +387,7 @@ span{
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 2rem;
 }
@@ -699,6 +703,8 @@ footer .copyright{
     color: black;
 }
 
+
+
 @media (max-width:1285px){
     html{
         font-size: 55%;
@@ -739,4 +745,42 @@ footer .copyright{
     50%, 100% {
         opacity: 0;
     }
+}
+
+.projects{
+    background: var(--second-bg-color);
+}
+
+.section-title{
+    font-size: 45px;
+    text-align: center;
+}
+
+.project-list {
+    display: flex; /* Utiliza flexbox */
+    justify-content: center; /* Centrar los recuadros */
+    flex-wrap: wrap; /* Permitir que se ajusten en varias filas */
+    gap: 4rem; /* Espaciado entre los recuadros */
+}
+
+.project-item h4{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.project-item p {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.project-item {
+    background: var(--bg-color); /* Fondo oscuro para los proyectos */
+    padding: 2rem; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 500px; /* Ancho del recuadro del proyecto */
+    height: 250px;
+
+    text-align: center; /* Centrar texto dentro del recuadro */
+    margin-bottom: 10rem; /* Separar los recuadros */
 }
