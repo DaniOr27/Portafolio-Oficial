@@ -55,3 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type(); // Llama a la función de tipeo
 });
+
+
+const menuIcon = document.querySelector("#menu-icon");
+    const navbar = document.querySelector(".navbar");
+    const navLinks = document.querySelectorAll(".navbar a"); // Selecciona los enlaces del menú
+
+    // Función para alternar el menú al hacer clic en el icono
+    menuIcon.onclick = () => {
+        navbar.classList.toggle("active");
+    };
+
+    // Cierra el menú si se hace clic fuera del menú o en un enlace del menú
+    document.addEventListener('click', function(event) {
+        const isClickInsideNavbar = navbar.contains(event.target);
+        const isClickInsideMenuIcon = menuIcon.contains(event.target);
+
+        if (!isClickInsideNavbar && !isClickInsideMenuIcon) {
+            navbar.classList.remove("active");  // Cierra el menú si se hace clic fuera
+        }
+    });
+
+    // Cierra el menú cuando se selecciona una opción del menú
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove("active");
+        });
+    });

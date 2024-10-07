@@ -42,34 +42,38 @@ html::-webkit-scrollbar-thumb{
     background: var(--main-color);
 }
 
-.header{
+/* Header styles */
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3rem 9%;
+    padding: 2rem 9%;
     background: rgba(0, 0, 0, 0.7);
-    filter: drop-shadow(10px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: 0.3s ease;
 }
 
-.logo{
-    font-size: 3rem;
+/* Logo styles */
+.logo {
+    font-size: 2.5rem;
     color: var(--main-color);
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
 }
 
-.logo:hover{
+.logo:hover {
     transform: scale(1.1);
 }
 
-.navbar a{
-    font-size: 1.8rem;
+/* Navbar styles */
+.navbar a {
+    font-size: 1.6rem;
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
@@ -78,47 +82,59 @@ html::-webkit-scrollbar-thumb{
 }
 
 .navbar a:hover,
-.navbar a.active{
+.navbar a.active {
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
 
-#menu-icon{
-    font-size: 3.6rem;
+/* Menu icon para mobiles */
+#menu-icon {
+    font-size: 3rem;
     color: var(--main-color);
     display: none;
+    cursor: pointer;
 }
 
-@media (max-width:995){
-    #menu-icon{
+/* Responsive styles */
+@media (max-width: 995px) {
+    .header {
+        padding: 2rem 5%;
+    }
+
+    #menu-icon {
         display: block;
     }
-    .navbar{
+
+    .navbar {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 40%;
+        width: 50%;
+        background-color: var(--second-bg-color);
         border-left: 3px solid var(--main-color);
         border-bottom: 3px solid var(--main-color);
-        border-bottom-left-radius: 2rem;
-        padding: 1rem 3%;
-        background-color: var(--second-bg-color);
-        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        padding: 1rem;
         display: none;
+        border-radius: 0 0 1rem 1rem;
     }
-    .navbar.active{
+
+    .navbar.active {
         display: block;
     }
-    .navbar a{
+
+    .navbar a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
+        margin: 2rem 0;
+        text-align: center;
     }
+
     .navbar a:hover,
-    .navbar a.active{
+    .navbar a.active {
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid var(--main-color);
+        background-color: rgba(0, 0, 0, 0.2);
+        border-bottom: none;
     }
 }
 
@@ -293,7 +309,7 @@ span{
     }
     .home-img img{
     position: relative;
-    width: 20vw; /* Ajusta el tamaño aquí */
+    width: 75vw; /* Ajusta el tamaño aquí */
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
@@ -301,80 +317,103 @@ span{
 
 }
 
+.heading {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
 /* services section */
 
-.services{
+/* .services {
     background: var(--second-bg-color);
+    padding: 5rem 3%; 
 }
 
-.heading{
-    font-size: 45px;
-    text-align: center;
-}
-
-.services-container{
+.services-container {
     display: grid;
-    grid-template-columns: repeat(3.1fr);
-    align-items: center;
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    justify-items: center; 
 }
 
-.services-box{
+.services-box {
     background-color: var(--main-color);
-    height: 300px;
     border-radius: 3rem;
     cursor: pointer;
     transition: 0.3s ease;
+    padding: 2rem; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    height: auto; 
 }
 
-.services-box:hover{
+.services-box:hover {
     background: transparent;
     color: var(--text-color);
     transform: scale(1.03);
     border: 5px solid var(--main-color);
 }
 
-.services-box .services-info{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    max-height: 200px;
-    justify-content: center;
-    align-items: center;
-    padding: 5em;
+.services-box .services-info {
+    max-width: 100%; 
 }
 
-.services-info h4{
-    font-size: 2.5rem;
+.services-info h4 {
+    font-size: 2.2rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.services-info p{
+.services-info p {
     font-size: 1.6rem;
     font-weight: 400;
-    max-height: 100px;
-    margin: auto;
+    margin: 0;
+    line-height: 1.6; 
 }
 
-@media (max-width:991px){
-    section{
-        padding: 10rem 3% 2rem;
+@media (max-width: 768px) {
+    .services {
+        padding: 3rem 2rem; 
     }
-    .services{
-        padding-bottom: 7rem;
+
+    .heading {
+        font-size: 3rem; 
+    }
+
+    .services-box {
+        padding: 1.5rem; 
+    }
+
+    .services-info h4 {
+        font-size: 2rem;
+    }
+
+    .services-info p {
+        font-size: 1.4rem;
     }
 }
 
-@media (max-width:895px) {
-    .services h2{
-        margin-bottom: 3rem;
+@media (max-width: 480px) {
+    .services {
+        padding: 2rem 1rem;
     }
-    .services-container{
-        grid-template-columns: repeat(1,1fr);
-    }
-}
 
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .services-info h4 {
+        font-size: 1.8rem;
+    }
+
+    .services-info p {
+        font-size: 1.2rem;
+    }
+} */
 
 /* skills section */
 
@@ -778,9 +817,17 @@ footer .copyright{
     background: var(--bg-color); /* Fondo oscuro para los proyectos */
     padding: 2rem; /* Espaciado interno */
     border-radius: 8px; /* Bordes redondeados */
-    width: 500px; /* Ancho del recuadro del proyecto */
-    height: 250px;
-
     text-align: center; /* Centrar texto dentro del recuadro */
-    margin-bottom: 10rem; /* Separar los recuadros */
+    margin-bottom: 4rem; /* Separación entre los proyectos */
+    max-width: 100%; /* Que se ajuste al contenido */
+}
+
+
+.project-image {
+    width: 100%; /* La imagen ocupará todo el ancho disponible del contenedor */
+    max-width: 300px; /* Tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 1rem auto; /* Espaciado alrededor y centrado */
+    display: block; /* Asegura que esté centrada dentro del contenedor */
+    border-radius: 8px; /* Bordes redondeados en la imagen */
 }
